@@ -18,6 +18,7 @@ namespace PosUebung_Autor.Controllers
             _context = context;
         }
 
+        /*
         [HttpPost]
         [Route("Fill")]
         public void FillData()
@@ -40,6 +41,7 @@ namespace PosUebung_Autor.Controllers
             _context.Autors.Add(autor2);
             _context.SaveChanges();
         }
+        */
 
         [HttpGet]
         [Route("GetAll")]

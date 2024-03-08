@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PosUebung_Autor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+70c061cd0dbfb235e01f0f791e446d599d6ceb35")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d7d45ea92f17e9bc4fdc3a5f7b7e0783c97e3a2d")]
 [assembly: System.Reflection.AssemblyProductAttribute("PosUebung_Autor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PosUebung_Autor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

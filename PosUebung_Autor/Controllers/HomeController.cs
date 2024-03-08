@@ -44,6 +44,22 @@ namespace PosUebung_Autor.Controllers
                 {
                     Buch book = new();
                     book.AutorId = id;
+
+                    List<SelectListItem> selectListItems = new List<SelectListItem>();
+                    SelectListItem eintrag1 = new SelectListItem("5 - OP", "5");
+                    selectListItems.Add(eintrag1);
+                    SelectListItem eintrag2 = new SelectListItem("4 - Noice", "4");
+                    selectListItems.Add(eintrag2);
+                    SelectListItem eintrag3 = new SelectListItem("3 - Nice", "3");
+                    selectListItems.Add(eintrag3);
+                    SelectListItem eintrag4 = new SelectListItem("2 - Ok", "2");
+                    selectListItems.Add(eintrag4);
+                    SelectListItem eintrag5 = new SelectListItem("1 - Awful", "1");
+                    selectListItems.Add(eintrag5);
+
+                    // Die Übergabe erfolgt über das ViewData-Dictionary
+                    ViewData["Kategorien"] = selectListItems;
+
                     return View(book);
                 }
             }
