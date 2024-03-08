@@ -252,3 +252,4 @@ C:\Users\Manuel\Desktop\Schule\5AHINF\POS\PosUebung_Autor\PosUebung_Autor\PosUeb
 C:\Users\Manuel\Desktop\Schule\5AHINF\POS\PosUebung_Autor\PosUebung_Autor\PosUebung_Autor\obj\Debug\net8.0\PosUebung_Autor.csproj.CopyComplete
 C:\Users\Manuel\Desktop\Schule\5AHINF\POS\PosUebung_Autor\PosUebung_Autor\PosUebung_Autor\obj\Debug\net8.0\PosUebung_Autor.genruntimeconfig.cache
 C:\Users\Manuel\Desktop\Schule\5AHINF\POS\PosUebung_Autor\PosUebung_Autor\PosUebung_Autor\obj\Debug\net8.0\ref\PosUebung_Autor.dll
+C:\Users\Manuel\Desktop\Schule\5AHINF\POS\PosUebung_Autor\PosUebung_Autor\PosUebung_Autor\obj\Debug\net8.0\PosUebung_Autor.sourcelink.json
