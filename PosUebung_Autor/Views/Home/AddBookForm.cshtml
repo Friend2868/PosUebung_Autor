@@ -1,0 +1,55 @@
+﻿@model Buch
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form asp-controller="Home" asp-action="AddBook" enctype="multipart/form-data">
+    <div class="card">
+        <div class="card-header">
+            <h1>Here you can add books</h1>
+        </div>
+        <div class="card-body">
+            <input hidden asp-for="AutorId" />
+
+            <div class="row mb-3">
+                <div class="col">
+                    <label>What is the title of the book?</label>
+                    <input class="form-control" asp-for="Title" type="text" placeholder="Book" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label>What are the genres of the book? (Divide with commas)</label>
+                    <input class="form-control" asp-for="Genres" type="text" placeholder="Genres" />
+                    <span asp-validation-for="Genres" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label>How many pages does the book have?</label>
+                    <input class="form-control" asp-for="Pages" type="number" step="1" placeholder="0" />
+                    <span asp-validation-for="Pages" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label>How many stars do you give the book? (1-5)</label>
+                    <input class="form-control" asp-for="Stars" type="number" step="1" placeholder="Stars" />
+                    <span asp-validation-for="Stars" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary" type="submit">Hinzufügen</button>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

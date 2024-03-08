@@ -1,0 +1,100 @@
+﻿@model List<Autor>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="row">
+        @{
+            foreach (Autor author in Model)
+            {
+                <div class="col mb-0">
+                    <div class="card" style="width: 18rem">
+                        <div class="card-header">
+                            <h5 class="card-title text-center">@Html.DisplayFor(modelItem => author.Name)</h5>
+                        </div>
+                        <div class="card-body">
+                            <p style="text-align:center" class="card-text">@author.Description</p>
+                            <hr />
+                            <ul class="list-group list-group-flush">
+                                @foreach (Buch buch in author.Books)
+                                {
+                                    <li class="list-group-item" style="text-align:center; font-weight:bold">@buch.Title </li>
+                                    <p style="margin:10px; text-align:center; font-weight:bold">Genres</p>
+                                    @foreach (string genre in buch.Genres)
+                                    {
+                                        <li style="text-align:center" class="list-group-item">• @genre</li>
+                                    }
+                                    <p style="margin-top:10px ; text-align:center; font-weight:bold">Other</p>
+                                    <li style="text-align:center" class="list-group-item">@buch.Pages Pages</li>
+                                    @switch (buch.Stars)
+                                    {
+                                        case 5:
+                                            <p style="text-align:center" class="card-text">⭐⭐⭐⭐⭐</p>
+                                            break;
+                                        case 4:
+                                            <p style="text-align:center" class="card-text">⭐⭐⭐⭐</p>
+                                            break;
+                                        case 3:
+                                            <p style="text-align:center" class="card-text">⭐⭐⭐</p>
+                                            break;
+                                        case 2:
+                                            <p style="text-align:center" class="card-text">⭐⭐</p>
+                                            break;
+                                        case 1:
+                                            <p style="text-align:center" class="card-text">⭐</p>
+                                            break;
+                                        default:
+                                            <p style="text-align:center" class="card-text">Keine Bewertungen</p>
+                                            break;
+                                    }
+                                    <hr />
+
+                                }
+                            </ul>
+                        </div>
+                        <div class="card-footer" style="text-align:center">
+                            <div class="row">
+                                <div class="col">
+                                    <a asp-route-id="@author.Id" asp-controller="Home" asp-action="AddBookForm" class="btn btn-primary text-left">Add Book</a>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-danger text-right" onclick="onDeleteClick(@author.Id)">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+    <div style="text-align:center">
+        <a asp-controller="Home" asp-action="CreateAutorForm" class="btn btn-primary">+</a>
+
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function onDeleteClick(id) {
+            var del = confirm("Wollen Sie wirklich löschen?");
+            if (del) {
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("DeleteAuthor")",
+                    data: { id: id },
+                    success: function (msg) {
+                        alert("Ok, wurde gelöscht");
+                        location.reload();
+                    },
+                    error: function (msg) {
+                        alert("Fehler:" + msg);
+                    }
+                });
+            }
+        }
+
+    </script>
+
+}

@@ -1,0 +1,35 @@
+﻿@model Autor
+
+<div class="container">
+    <form asp-controller="Home" asp-action="CreateAutor" enctype="multipart/form-data">
+        <div class="card">
+            <div class="card-header">
+                <h1>Create new Autor</h1>
+            </div>
+            <div class="card-body">
+                <input hidden asp-for="Id" />
+                <div class="row mb-3">
+                    <div class="col">
+                        <label>What is the name of the autor?</label>
+                        <input class="form-control" asp-for="Name" type="text" placeholder="Autor" />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label>Description of the autor</label>
+                        <textarea class="form-control" asp-for="Description" type="text" placeholder="Hey its me moin"></textarea>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label>Age of the autor</label>
+                        <textarea class="form-control" asp-for="Age" type="text" placeholder="18"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary" type="submit">Hinzufügen</button>
+            </div>
+        </div>
+    </form>
+</div>

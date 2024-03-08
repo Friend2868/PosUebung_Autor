@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\PosUebung_Autor.props" />
+</Project>
